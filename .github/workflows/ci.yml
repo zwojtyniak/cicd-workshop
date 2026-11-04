@@ -90,6 +90,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+
       - name: Upload build
         uses: actions/upload-artifact@v4
         with:
@@ -108,13 +109,12 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-      - run: npm run test:api
-      - name: Upload build
-        uses: actions/upload-artifact@v4
+      - name: Download build
+        uses: actions/download-artifact@v4
         with:
           name: dist
           path: dist/
-          retention-days: 1
+      - run: npm run test:api
 
   test-ui:
     name: UI tests (${{ github.event_name == 'pull_request' && 'smoke' || github.event_name == 'workflow_dispatch' && inputs.suite || 'full regression' }})
@@ -148,6 +148,7 @@ jobs:
         with:
           name: dist
           path: dist/
+
       - name: UI tests
         run: npx playwright test --project=ui-chromium ${{ env.GREP }}
         env:
