@@ -66,3 +66,82 @@ Instalacja przeglądarek, pierwszy przebieg	8s s	?
 Instalacja przeglądarek, drugi przebieg	18 s	? 0s
 Cały przebieg	3:25s	? 3m14s
 
+
+Zadanie 5:
+
+
+Zadanie 8:
+Pomiar A:
+Usage:
+Run time
+Learn about OS pricing on GitHub Actions
+Job	Run time	
+Unit tests
+12s	
+Changed files
+5s	
+Security
+16s	
+Lint and typecheck
+23s	
+Build
+17s	
+UI tests (full regression)
+2m 59s	
+API tests
+56s	
+5m 8s	
+UI tests (full regression)
+succeeded 41 minutes ago in 2m 59s
+
+Pomiar B:
+Run time
+Learn about OS pricing on GitHub Actions
+Job	Run time	
+Lint and typecheck
+17s	
+Security
+21s	
+Changed files
+5s	
+Build
+13s	
+Unit tests
+38s	
+UI tests (full regression)
+1m 36s	
+API tests
+22s	
+3m 32s	
+
+UI tests (full regression)
+succeeded now in 1m 36s
+
+Pomiar C:
+
+Run time
+Learn about OS pricing on GitHub Actions
+Job	Run time	
+Unit tests
+13s	
+Security
+14s	
+Changed files
+5s	
+Lint and typecheck
+25s	
+Build
+14s	
+UI tests 2/4 (full regression)
+30s	
+UI tests 4/4 (full regression)
+28s	
+API tests
+42s	
+UI tests 3/4 (full regression)
+33s	
+UI tests 1/4 (full regression)
+36s	
+4m 0s	
+
+
