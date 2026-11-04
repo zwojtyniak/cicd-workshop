@@ -47,4 +47,22 @@ Co na `demo/failing-unit` stało się z testami API i UI:
 
 ## Pomiary z kolejnych zadań
 
-Tu dopisujesz pomiary i odpowiedzi z kolejnych zadań, pod nagłówkiem z numerem zadania.
+Zadanie 3:
+
+Ad 5:
+czas kroku Install dependencies: 25s
+czas kroku Install Playwright browsers: 8s
+całkowity czas przebiegu: 3m 25s
+
+Ad 6:
+w logu kroku Cache Playwright browsers powinien pojawić się komunikat Cache restored from key, - tak
+krok Install Playwright browsers powinien zostać pominięty i mieć szarą ikonę, - tak
+cały przebieg powinien być o kilka sekund krótszy. Większej różnicy nie będzie, bo najdłużej trwają testy UI, a nimi zajmiemy się później.: 3m 14s
+
+Co	Przed	Po
+Czas do informacji o błędzie lintu	nigdy	?
+Install dependencies	6 s	? 20s
+Instalacja przeglądarek, pierwszy przebieg	8s s	?
+Instalacja przeglądarek, drugi przebieg	18 s	? 0s
+Cały przebieg	3:25s	? 3m14s
+
