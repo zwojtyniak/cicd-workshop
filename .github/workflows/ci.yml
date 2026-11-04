@@ -154,7 +154,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [1, 2, 3, 4]
+        shard: >-
+          ${{ fromJSON(github.event_name == 'pull_request'
+              && '[1,2]'
+              || '[1,2,3,4,5,6,7,8]') }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -185,7 +188,7 @@ jobs:
           path: dist/
 
       - name: UI tests
-        run: npx playwright test --project=ui-chromium --shard=${{ matrix.shard }}/4 ${{ env.GREP }}
+        run: npx playwright test --project=ui-chromium --shard=${{ matrix.shard }}/${{ github.event_name == 'pull_request' && 2 || 8 }} ${{ env.GREP }}
         env:
           GREP: >-
             ${{ (github.event_name == 'pull_request'
